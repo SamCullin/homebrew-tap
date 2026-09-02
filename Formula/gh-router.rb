@@ -5,45 +5,54 @@
 class GhRouter < Formula
   desc "Deterministic GitHub CLI account routing"
   homepage "https://github.com/SamCullin/gh-router"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SamCullin/gh-router/releases/download/v0.1.1/gh-router_0.1.1_darwin_amd64.tar.gz"
-      sha256 "ac9801d1b4a62ed18af93275f8e6ad926ee0b24d77e84c35fd5937e0496da199"
+      url "https://github.com/SamCullin/gh-router/releases/download/v0.2.0/gh-router_0.2.0_darwin_amd64.tar.gz"
+      sha256 "438c44731b33b185137e700b2ef50b423d3810fe9ede6b2337c42b5aae8eeb0c"
 
       define_method(:install) do
         bin.install "gh-router"
+        bin.install_symlink "gh-router" => "ghr"
+        bin.install_symlink "gh-router" => "ghrllm.text"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SamCullin/gh-router/releases/download/v0.1.1/gh-router_0.1.1_darwin_arm64.tar.gz"
-      sha256 "6188ec33bf5bd2071ad5ee8f674e5ff1f8f1909b14e9479891bd10b43e412465"
+      url "https://github.com/SamCullin/gh-router/releases/download/v0.2.0/gh-router_0.2.0_darwin_arm64.tar.gz"
+      sha256 "fdc6dfefb7b1e43583f50681209d42ddcc7ac07ccd05080ad105c998e17457d0"
 
       define_method(:install) do
         bin.install "gh-router"
+        bin.install_symlink "gh-router" => "ghr"
+        bin.install_symlink "gh-router" => "ghrllm.text"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SamCullin/gh-router/releases/download/v0.1.1/gh-router_0.1.1_linux_amd64.tar.gz"
-      sha256 "f91ed5da495e33b8877b430c8b6a37887e637c114ac3ef95330acdf0eb4bc868"
+      url "https://github.com/SamCullin/gh-router/releases/download/v0.2.0/gh-router_0.2.0_linux_amd64.tar.gz"
+      sha256 "80d53bfb9df15940df74dc42ecf24ebf63b5694f1e0934674d3431b2df314b12"
       define_method(:install) do
         bin.install "gh-router"
+        bin.install_symlink "gh-router" => "ghr"
+        bin.install_symlink "gh-router" => "ghrllm.text"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SamCullin/gh-router/releases/download/v0.1.1/gh-router_0.1.1_linux_arm64.tar.gz"
-      sha256 "f7314eade4d7c9976c1eee468a00992bee0f7629511db29c895ee7cecb5f42c4"
+      url "https://github.com/SamCullin/gh-router/releases/download/v0.2.0/gh-router_0.2.0_linux_arm64.tar.gz"
+      sha256 "379bb35d1994cdd7495dfc06cff1464a12b6c6efe6ba9c45fdf6ca84377a3f0b"
       define_method(:install) do
         bin.install "gh-router"
+        bin.install_symlink "gh-router" => "ghr"
+        bin.install_symlink "gh-router" => "ghrllm.text"
       end
     end
   end
 
   test do
     system "#{bin}/gh-router", "--version"
+    system "#{bin}/ghrllm.text"
   end
 end
