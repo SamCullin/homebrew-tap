@@ -3,25 +3,25 @@ cask "gh-router" do
   binary "gh-router", target: "ghr"
   binary "gh-router", target: "ghrllm.text"
 
-  version "0.4.0"
+  version "0.5.0"
 
   on_macos do
     on_arm do
-      sha256 "23700986befc1d44636191cd8019af108138e63bca642b6eeca1848d4198e349"
+      sha256 "3ae2bca5225c30b2283fcd72bfbc8ae30b2aba66a2a7b2d220dde60912b72785"
       url "https://github.com/SamCullin/gh-router/releases/download/v#{version}/gh-router_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "f555af80910ac91734bcdbb9b0de4108e7da54fe7ef24b21275fadd2db6ea33c"
+      sha256 "67296d71ed65cf37d619646382bdc72adc2b99446a39badc2a0591c7233387f1"
       url "https://github.com/SamCullin/gh-router/releases/download/v#{version}/gh-router_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "20d3bd0855875302864ce7bdc2389f54e7b6f9319bffd781914218644ab92647"
+      sha256 "b207c11e0eeed683b309a09a53e13bcb1e17edddb11d246dc3fbff7c93129fb5"
       url "https://github.com/SamCullin/gh-router/releases/download/v#{version}/gh-router_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "43ce2445365716b84e682ac858dd1338279a45603ab29de42b12788c271b4d30"
+      sha256 "5213223bb18fe69b9a574e9da9a9bfe32b61a0e1b64675a2d65a54abb7ac1afb"
       url "https://github.com/SamCullin/gh-router/releases/download/v#{version}/gh-router_#{version}_linux_amd64.tar.gz"
     end
   end
